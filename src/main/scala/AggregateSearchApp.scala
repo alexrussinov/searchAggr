@@ -1,6 +1,6 @@
 import scala.concurrent.ExecutionContext.Implicits.global
 
-object AggregateSearchApp extends App{
+object AggregateSearchApp extends App {
     val aggregator = Aggregator()
     val engines = Seq(new BingSearch("dZHx2LeVZb9BHorIDiwiIPTetFDaeqOgBHBJAScDzFE"),
         new GoogleSearch("AIzaSyDzkcGGhgkB4jjY22OavyJuyfuNf5AuMTg", "008366210748654328620:cicfenuzhr0"))
