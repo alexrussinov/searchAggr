@@ -18,13 +18,19 @@ trait Aggregator extends SearchTypes {
         searchEngines.map(engine => engine.search(searchPhrase).map(engine.parse))
     }
 
-    /** when all futures are completed, combine the result in round robin fashion **/
+    /**
+      * When all futures are completed, combine the result in round robin fashion
+      * @return
+      */
     def roundRobin: AggregationStrategy =
         (searchEngines, searchPhrase) => {
             Future.sequence(executeQuery(searchEngines, searchPhrase)).map(mergeResults)
         }
 
-    /** FIFO - results from the future which is completed first, appears first in the aggregated set **/
+    /**
+      * FIFO - results from the future which is completed first, appears first in the aggregated set
+      * @return
+      */
     def fifoStrategy: AggregationStrategy = {
         (searchEngines, searchPhrase) => {
             val enumerators = executeQuery(searchEngines, searchPhrase).map(futureResult => Enumerator.flatten(futureResult.map(Enumerator(_))))
