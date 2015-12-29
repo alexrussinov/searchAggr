@@ -1,7 +1,5 @@
-/**
- * Created by alex on 28.12.15.
- */
 import scala.concurrent.ExecutionContext.Implicits.global
+
 object TestGoogleSearch extends App {
 
     val engine = new GoogleSearch("AIzaSyDzkcGGhgkB4jjY22OavyJuyfuNf5AuMTg", "008366210748654328620:cicfenuzhr0")

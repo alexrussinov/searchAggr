@@ -1,6 +1,3 @@
-/**
- * Created by alex on 28.12.15.
- */
 import scala.concurrent.ExecutionContext.Implicits.global
 
 object TestBingSearch extends App {

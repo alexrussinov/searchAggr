@@ -5,9 +5,6 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.util.{Try, Failure, Success}
 
-/**
-  * Created by Aleksey Voronets on 28.12.15.
-  */
 object CommonUtilsImplicits {
     implicit class BingFormatKey(key: String){
         def toBingFormatKey: String = {
