@@ -22,7 +22,7 @@ trait SearchEngine extends SearchTypes {
 
     def parse(searchResult: SearchResult): Seq[String]
 }
-//TODO extract code for closing to the helper method
+
 case class GoogleSearch(apiKey: String, searchEngineId: String, baseUrl: String = "https://www.googleapis.com/customsearch/v1") extends SearchEngine {
 
     override val client = NingWSClient()
